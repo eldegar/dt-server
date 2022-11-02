@@ -1,10 +1,11 @@
 import { jsonDb } from "../database/jsondb";
+import { MultiSwapDriverIndexes } from "./driver.type";
 
-export function findDriverIndexById(driverId: number) {
+export async function findDriverIndexById(driverId: number) {
   return jsonDb.drivers.findIndex((driver) => driver.id === driverId);
 }
 
-export function swapDriver(driverIndex: number) {
+export async function swapDriver(driverIndex: number) {
   jsonDb.drivers[driverIndex].place--;
   jsonDb.drivers[driverIndex - 1].place++;
 
@@ -25,6 +26,6 @@ export function swapMultiDriver(driverIds: {
   return jsonDb.drivers;
 }
 
-export function getDrivers() {
+export async function getDrivers() {
   return jsonDb.drivers;
 }
