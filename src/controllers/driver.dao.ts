@@ -14,10 +14,7 @@ export async function swapDriver(driverIndex: number) {
   return jsonDb.drivers;
 }
 
-export function swapMultiDriver(driverIds: {
-  fromDriverIndex: number;
-  toDriverIndex: number;
-}) {
+export async function swapMultiDriver(driverIds: MultiSwapDriverIndexes) {
   const { fromDriverIndex, toDriverIndex } = driverIds;
   const driverStartOvertake = jsonDb.drivers.splice(fromDriverIndex, 1);
 
