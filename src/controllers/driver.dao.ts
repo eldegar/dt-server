@@ -12,3 +12,7 @@ export function swapDriver(driverIndex: number) {
   driversData.splice(driverIndex - 1, 0, driverStartOvertake[0]);
   return driversData;
 }
+
+export function getDrivers() {
+  return driversData;
+}
