@@ -1,5 +1,6 @@
 import fs from "fs";
-import { Driver } from "src/controllers/driver.type";
+import { Driver } from "../controllers/driver.type";
+import { shuffleArray } from "../utils/helper";
 let rawdata = fs.readFileSync("data/drivers.json");
 const driversRawData = JSON.parse(rawdata.toString());
 
